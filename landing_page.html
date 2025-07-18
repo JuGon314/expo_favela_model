@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sua Landing Page Profissional - Soluções inovadoras para o seu negócio. Descubra nossos serviços, sobre nós e entre em contato.">
+    <meta name="keywords" content="landing page, website, serviços, empresa, contato, SEO, responsivo, acessibilidade">
+    <meta name="author" content="Seu Nome/Nome da Empresa">
+    <title>Sua Landing Page Profissional</title>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Variáveis CSS para cores e fontes */
+        :root {
+            --color-blue-600: #2563eb;
+            --color-blue-700: #1d4ed8;
+            --color-blue-800: #1e40af;
+            --color-blue-500: #3b82f6;
+            --color-blue-200: #bfdbfe;
+            --color-blue-100: #dbeafe;
+            --color-indigo-700: #4338ca;
+            --color-purple-600: #9333ea;
+            --color-purple-700: #7e22ce;
+            --color-gray-50: #f9fafb;
+            --color-gray-100: #f3f4f6;
+            --color-gray-200: #e5e7eb;
+            --color-gray-300: #d1d5db;
+            --color-gray-400: #9ca3af;
+            --color-gray-500: #6b7280;
+            --color-gray-700: #374151;
+            --color-gray-800: #1f2937;
+            --color-gray-900: #111827;
+            --color-white: #ffffff;
+
+            --font-inter: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-inter);
+            scroll-behavior: smooth;
+            background-color: var(--color-gray-50);
+            color: var(--color-gray-800);
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        body a {
+            text-decoration: none;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1280px; /* Equivalent to max-w-7xl */
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1.5rem; /* px-6 */
+            padding-right: 1.5rem; /* px-6 */
+        }
+
+        /* Header */
+        .header {
+            background-image: linear-gradient(to right, var(--color-blue-600), var(--color-indigo-700));
+            color: var(--color-white);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+            position: fixed;
+            width: 100%;
+            z-index: 50;
+        }
+
+        .header a {
+            color: #fff;
+        }
+
+        .header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem; /* py-4 */
+            padding-bottom: 1rem; /* py-4 */
+        }
+
+        .header .logo {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 700; /* font-bold */
+            letter-spacing: -0.025em; /* tracking-tight */
+            border-radius: 0.375rem; /* rounded-md */
+            padding: 0.5rem; /* p-2 */
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .header .logo:hover {
+            background-color: var(--color-blue-700);
+        }
+
+        /* Desktop Navigation */
+        .header .nav-desktop {
+            display: none; /* hidden */
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header .nav-desktop li {
+            margin-left: 2rem; /* space-x-8 */
+        }
+
+        .header .nav-desktop a {
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 500; /* font-medium */
+            padding: 0.5rem 0.75rem; /* py-2 px-3 */
+            border-radius: 0.375rem; /* rounded-md */
+            transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        .header .nav-desktop a:hover {
+            color: var(--color-blue-200);
+            background-color: var(--color-blue-700);
+        }
+
+        /* Mobile Hamburger Menu Button */
+        .mobile-menu-button {
+            display: block; /* md:hidden */
+            padding: 0.5rem; /* p-2 */
+            border-radius: 0.375rem; /* rounded-md */
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .mobile-menu-button:focus {
+            box-shadow: 0 0 0 2px var(--color-blue-300); /* focus:ring-2 focus:ring-blue-300 */
+        }
+
+        .hamburger-line {
+            width: 24px;
+            height: 2px;
+            background-color: var(--color-white);
+            display: block;
+            margin: 6px auto;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .mobile-menu-button.active .line-top {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .mobile-menu-button.active .line-middle {
+            opacity: 0;
+        }
+        .mobile-menu-button.active .line-bottom {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none; /* hidden md:hidden */
+            background-color: var(--color-blue-800);
+            padding-top: 1rem; /* py-4 */
+            padding-bottom: 1rem; /* py-4 */
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06); /* shadow-inner */
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem; /* space-y-4 */
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 0.5rem 1rem; /* py-2 px-4 */
+            border-radius: 0.375rem; /* rounded-md */
+            transition: background-color 0.3s ease-in-out;
+            width: 100%;
+            text-align: center;
+        }
+
+        .mobile-menu a:hover {
+            background-color: var(--color-blue-700);
+        }
+
+        /* Main content padding for fixed header */
+        main {
+            padding-top: 5rem; /* pt-20 (approximate height of header) */
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            background-image: linear-gradient(to bottom right, var(--color-blue-500), var(--color-purple-600));
+            color: var(--color-white);
+            padding-top: 5rem; /* py-20 */
+            padding-bottom: 5rem; /* py-20 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 75vh; /* min-h-screen-75 */
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0; /* top:0, right:0, bottom:0, left:0 */
+            z-index: 0;
+            opacity: 0.2;
+            background-image: url('https://placehold.co/1920x1080/0000FF/FFFFFF?text=Fundo+Abstrato');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-section .content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem; /* text-5xl */
+            font-weight: 800; /* font-extrabold */
+            line-height: 1.25; /* leading-tight */
+            margin-bottom: 1.5rem; /* mb-6 */
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* drop-shadow-lg */
+            animation: fadeInFromBottom 0.8s ease-out forwards;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem; /* text-xl */
+            margin-bottom: 2.5rem; /* mb-10 */
+            max-width: 48rem; /* max-w-3xl */
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+            animation: fadeInFromBottom 0.8s ease-out 0.2s forwards;
+        }
+
+        .hero-section .button {
+            display: inline-block;
+            background-color: var(--color-white);
+            color: var(--color-blue-700);
+            font-weight: 700; /* font-bold */
+            padding: 0.75rem 2rem; /* py-3 px-8 */
+            border-radius: 9999px; /* rounded-full */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            transform: scale(1);
+        }
+
+        .hero-section .button:hover {
+            background-color: var(--color-blue-100);
+            transform: scale(1.05);
+        }
+
+        /* About Us Section */
+        .about-section {
+            padding-top: 4rem; /* py-16 */
+            padding-bottom: 4rem; /* py-16 */
+            background-color: var(--color-white);
+        }
+
+        .about-section .content-wrapper {
+            display: flex;
+            flex-direction: column; /* flex-col */
+            align-items: center;
+            gap: 3rem; /* gap-12 */
+        }
+
+        .about-section .image-wrapper {
+            width: 100%; /* md:w-1/2 */
+        }
+
+        .about-section img {
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-2xl */
+            transition: transform 0.5s ease-in-out;
+            object-fit: cover;
+            width: 100%;
+            height: auto;
+        }
+
+        .about-section img:hover {
+            transform: scale(1.05);
+        }
+
+        .about-section .text-content {
+            width: 100%; /* md:w-1/2 */
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            margin-bottom: 1.5rem; /* mb-6 */
+            color: var(--color-blue-700);
+        }
+
+        .about-section p {
+            font-size: 1.125rem; /* text-lg */
+            line-height: 1.75; /* leading-relaxed */
+            margin-bottom: 1rem; /* mb-4 */
+        }
+
+        /* Services Section */
+        .services-section {
+            padding-top: 4rem; /* py-16 */
+            padding-bottom: 4rem; /* py-16 */
+            background-color: var(--color-gray-100);
+        }
+
+        .services-section h2 {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            text-align: center;
+            margin-bottom: 3rem; /* mb-12 */
+            color: var(--color-blue-700);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* grid-cols-1 */
+            gap: 2.5rem; /* gap-10 */
+        }
+
+        .service-card {
+            background-color: var(--color-white);
+            padding: 2rem; /* p-8 */
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+            border: 1px solid var(--color-gray-200);
+            transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+            transform: translateY(0);
+        }
+
+        .service-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* hover:shadow-2xl */
+            transform: translateY(-0.5rem); /* hover:-translate-y-2 */
+        }
+
+        .service-card .icon {
+            color: var(--color-blue-600);
+            margin-bottom: 1rem; /* mb-4 */
+            font-size: 3rem; /* text-5xl */
+            text-align: center;
+        }
+
+        .service-card .icon svg {
+            width: 4rem; /* w-16 */
+            height: 4rem; /* h-16 */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 600; /* font-semibold */
+            margin-bottom: 1rem; /* mb-4 */
+            text-align: center;
+            color: var(--color-gray-900);
+        }
+
+        .service-card p {
+            color: var(--color-gray-700);
+            line-height: 1.75; /* leading-relaxed */
+            text-align: center;
+        }
+
+        /* Call to Action Section */
+        .cta-section {
+            padding-top: 4rem; /* py-16 */
+            padding-bottom: 4rem; /* py-16 */
+            background-image: linear-gradient(to right, var(--color-purple-600), var(--color-indigo-700));
+            color: var(--color-white);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            margin-bottom: 1.5rem; /* mb-6 */
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* drop-shadow-md */
+        }
+
+        .cta-section p {
+            font-size: 1.25rem; /* text-xl */
+            margin-bottom: 2.5rem; /* mb-10 */
+            max-width: 48rem; /* max-w-3xl */
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .cta-section .button {
+            display: inline-block;
+            background-color: var(--color-white);
+            color: var(--color-purple-700);
+            font-weight: 700; /* font-bold */
+            padding: 0.75rem 2rem; /* py-3 px-8 */
+            border-radius: 9999px; /* rounded-full */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            transform: scale(1);
+        }
+
+        .cta-section .button:hover {
+            background-color: var(--color-gray-50);
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding-top: 4rem; /* py-16 */
+            padding-bottom: 4rem; /* py-16 */
+            background-color: var(--color-white);
+        }
+
+        .contact-section h2 {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            text-align: center;
+            margin-bottom: 3rem; /* mb-12 */
+            color: var(--color-blue-700);
+        }
+
+        .contact-form-wrapper {
+            max-width: 48rem; /* max-w-3xl */
+            margin-left: auto;
+            margin-right: auto;
+            background-color: var(--color-gray-50);
+            padding: 2rem; /* p-8 */
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+            border: 1px solid var(--color-gray-200);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem; /* space-y-6 */
+        }
+
+        .contact-form label {
+            display: block;
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 500; /* font-medium */
+            color: var(--color-gray-700);
+            margin-bottom: 0.5rem; /* mb-2 */
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem; /* p-3 */
+            border: 1px solid var(--color-gray-300);
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--color-blue-500);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* focus:ring-blue-500 */
+        }
+
+        .contact-form textarea {
+            resize: vertical; /* Allow vertical resizing */
+        }
+
+        .contact-form .submit-button-wrapper {
+            text-align: center;
+        }
+
+        .contact-form button[type="submit"] {
+            background-color: var(--color-blue-600);
+            color: var(--color-white);
+            font-weight: 700; /* font-bold */
+            padding: 0.75rem 2rem; /* py-3 px-8 */
+            border-radius: 9999px; /* rounded-full */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            transform: scale(1);
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .contact-form button[type="submit"]:hover {
+            background-color: var(--color-blue-700);
+            transform: scale(1.05);
+        }
+
+        .contact-form button[type="submit"]:focus {
+            box-shadow: 0 0 0 2px var(--color-blue-500), 0 0 0 4px rgba(59, 130, 246, 0.5); /* focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 */
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--color-gray-900);
+            color: var(--color-white);
+            padding-top: 2.5rem; /* py-10 */
+            padding-bottom: 2.5rem; /* py-10 */
+        }
+
+        .footer .content {
+            text-align: center;
+        }
+
+        .footer h3 {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 700; /* font-bold */
+            margin-bottom: 1rem; /* mb-4 */
+        }
+
+        .footer p {
+            color: var(--color-gray-400);
+            max-width: 32rem; /* max-w-xl */
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+
+        .footer .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem; /* space-x-6 */
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+
+        .footer .social-links a {
+            color: var(--color-gray-400);
+            transition: color 0.3s ease-in-out;
+        }
+
+        .footer .social-links a:hover {
+            color: var(--color-white);
+        }
+
+        .footer .social-links svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .footer .copyright {
+            color: var(--color-gray-500);
+            font-size: 0.875rem; /* text-sm */
+        }
+
+        /* Animations */
+        @keyframes fadeInFromBottom {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (min-width: 768px) { /* md breakpoint */
+            .header .nav-desktop {
+                display: flex;
+            }
+            .mobile-menu-button {
+                display: none;
+            }
+            .mobile-menu {
+                display: none !important; /* Ensure it's hidden on desktop */
+            }
+
+            .hero-section {
+                padding-top: 8rem; /* md:py-32 */
+                padding-bottom: 8rem; /* md:py-32 */
+            }
+
+            .hero-section h1 {
+                font-size: 3.75rem; /* md:text-6xl */
+            }
+
+            .hero-section p {
+                font-size: 1.5rem; /* md:text-2xl */
+            }
+
+            .about-section {
+                padding-top: 6rem; /* md:py-24 */
+                padding-bottom: 6rem; /* md:py-24 */
+            }
+
+            .about-section .content-wrapper {
+                flex-direction: row; /* md:flex-row */
+            }
+
+            .about-section .image-wrapper,
+            .about-section .text-content {
+                width: 50%; /* md:w-1/2 */
+            }
+
+            .about-section .text-content {
+                text-align: left; /* md:text-left */
+            }
+
+            .services-section {
+                padding-top: 6rem; /* md:py-24 */
+                padding-bottom: 6rem; /* md:py-24 */
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+            }
+
+            .cta-section {
+                padding-top: 6rem; /* md:py-24 */
+                padding-bottom: 6rem; /* md:py-24 */
+            }
+
+            .cta-section h2 {
+                font-size: 3rem; /* md:text-5xl */
+            }
+
+            .cta-section p {
+                font-size: 1.5rem; /* md:text-2xl */
+            }
+
+            .contact-section {
+                padding-top: 6rem; /* md:py-24 */
+                padding-bottom: 6rem; /* md:py-24 */
+            }
+        }
+
+        @media (min-width: 1024px) { /* lg breakpoint */
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr); /* lg:grid-cols-3 */
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="container">
+            <!-- Logo/Site Title -->
+            <a href="#inicio" class="logo" aria-label="Voltar ao Início">
+                Sua Marca
+            </a>
+
+            <!-- Desktop Navigation -->
+            <ul class="nav-desktop">
+                <li><a href="#inicio" aria-label="Ir para a seção Início">Início</a></li>
+                <li><a href="#sobre" aria-label="Ir para a seção Sobre Nós">Sobre Nós</a></li>
+                <li><a href="#servicos" aria-label="Ir para a seção Nossos Serviços">Serviços</a></li>
+                <li><a href="#contato" aria-label="Ir para a seção Contato">Contato</a></li>
+            </ul>
+
+            <!-- Mobile Hamburger Menu Button -->
+            <div class="mobile-menu-button-wrapper">
+                <button id="mobile-menu-button" class="mobile-menu-button" aria-label="Abrir menu de navegação móvel">
+                    <span class="hamburger-line line-top"></span>
+                    <span class="hamburger-line line-middle"></span>
+                    <span class="hamburger-line line-bottom"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="mobile-menu">
+            <ul>
+                <li><a href="#inicio" aria-label="Ir para a seção Início">Início</a></li>
+                <li><a href="#sobre" aria-label="Ir para a seção Sobre Nós">Sobre Nós</a></li>
+                <li><a href="#servicos" aria-label="Ir para a seção Nossos Serviços">Serviços</a></li>
+                <li><a href="#contato" aria-label="Ir para a seção Contato">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main> <!-- Padding top to account for fixed header -->
+
+        <!-- Hero Section (Início) -->
+        <section id="inicio" class="hero-section">
+            <div class="container content">
+                <h1>
+                    Transforme Suas Ideias em Realidade Digital
+                </h1>
+                <p>
+                    Soluções web inovadoras e personalizadas para impulsionar o seu negócio no mundo online.
+                </p>
+                <a href="#servicos" class="button" aria-label="Descubra Nossos Serviços">
+                    Descubra Nossos Serviços
+                </a>
+            </div>
+        </section>
+
+        <!-- About Us Section (Sobre Nós) -->
+        <section id="sobre" class="about-section">
+            <div class="container content-wrapper">
+                <div class="image-wrapper">
+                    <img src="https://placehold.co/600x400/A0B3D6/FFFFFF?text=Equipe+Trabalhando" alt="Equipe de profissionais trabalhando em conjunto">
+                </div>
+                <div class="text-content">
+                    <h2>Quem Somos</h2>
+                    <p>
+                        Somos uma equipe apaixonada por tecnologia e inovação, dedicada a criar experiências digitais excepcionais. Com anos de experiência no mercado, ajudamos empresas de todos os portes a alcançar seus objetivos online.
+                    </p>
+                    <p>
+                        Nossa missão é fornecer soluções web de alta qualidade, focadas em design intuitivo, performance otimizada e resultados mensuráveis, garantindo que sua marca se destaque na internet.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section (Serviços) -->
+        <section id="servicos" class="services-section">
+            <div class="container">
+                <h2>Nossos Serviços</h2>
+                <div class="services-grid">
+                    <!-- Service Card 1 -->
+                    <div class="service-card">
+                        <div class="icon">
+                            <!-- Icon for Web Development -->
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75A2.25 2.25 0 0 0 15.75 1.5H13.5m-3 0V3.75m3-2.25V3.75M9 15.75h3m-3 3h3m-3-6h3m-9 3h1.5m-1.5 0A2.25 2.25 0 0 0 3 12.75v3M15 12.75h1.5m-1.5 0A2.25 2.25 0 0 1 21 12.75v3m-6.75-9h.008v.008h-.008V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM12 6.75h.008v.008H12V6.75Z" />
+                            </svg>
+                        </div>
+                        <h3>Desenvolvimento Web</h3>
+                        <p>
+                            Criação de websites modernos, responsivos e otimizados para oferecer a melhor experiência ao usuário.
+                        </p>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="service-card">
+                        <div class="icon">
+                            <!-- Icon for SEO -->
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L13.5 21.75 21 12H12.75" />
+                            </svg>
+                        </div>
+                        <h3>Otimização para SEO</h3>
+                        <p>
+                            Estratégias de SEO para aumentar a visibilidade do seu site nos motores de busca e atrair mais tráfego orgânico.
+                        </p>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="service-card">
+                        <div class="icon">
+                            <!-- Icon for UI/UX Design -->
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c.325-.378.317-.811.016-1.128Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M11.28 9.348a4.5 4.5 0 1 0 0 7.304M12.72 17.652a4.5 4.5 0 1 0 0-7.304" />
+                            </svg>
+                        </div>
+                        <h3>Design UI/UX</h3>
+                        <p>
+                            Criação de interfaces intuitivas e experiências de usuário agradáveis que convertem visitantes em clientes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>
+                    Pronto para Levar Seu Negócio ao Próximo Nível?
+                </h2>
+                <p>
+                    Entre em contato conosco hoje mesmo e vamos construir algo incrível juntos!
+                </p>
+                <a href="#contato" class="button" aria-label="Entre em Contato Conosco">
+                    Fale Conosco Agora!
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section (Contato) -->
+        <section id="contato" class="contact-section">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form">
+                        <div>
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome" aria-required="true">
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" aria-required="true">
+                        </div>
+                        <div>
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" rows="6" placeholder="Sua mensagem aqui..." aria-required="true"></textarea>
+                        </div>
+                        <div class="submit-button-wrapper">
+                            <button type="submit" aria-label="Enviar Mensagem">
+                                Enviar Mensagem
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container content">
+            <div class="footer-brand">
+                <h3>Sua Marca</h3>
+                <p>
+                    Inovação e qualidade em soluções digitais para o seu sucesso.
+                </p>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Visite nosso Facebook">
+                    <!-- Facebook Icon (SVG) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.812c-3.233 0-4.188 1.508-4.188 4.035v2.965z"/></svg>
+                </a>
+                <a href="#" aria-label="Visite nosso Twitter">
+                    <!-- Twitter Icon (SVG) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.594 0-6.49 2.903-6.49 6.49 0 .509.058 1.007.168 1.487-5.392-.27-10.142-2.868-13.322-6.837-.56.967-.883 2.09-.883 3.297 0 2.256 1.144 4.243 2.877 5.419-.847-.025-1.649-.26-2.35-.647-.006.027-.006.054-.006.081 0 3.154 2.23 5.792 5.199 6.386-.54.145-1.107.222-1.69.222-.415 0-.814-.041-1.202-.115.825 2.572 3.223 4.453 6.077 4.453-2.23 1.748-5.047 2.787-8.13 2.787-.53 0-1.05-.031-1.562-.09 2.885 1.854 6.306 2.934 9.982 2.934 11.99 0 18.52-9.912 18.52-18.52 0-.281-.006-.562-.019-.842.825-.594 1.543-1.331 2.116-2.177z"/></svg>
+                </a>
+                <a href="#" aria-label="Visite nosso LinkedIn">
+                    <!-- LinkedIn Icon (SVG) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.381 1.11-2.5 2.48-2.5s2.48 1.119 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.003-5.067 6.003 0v8.399h4.988v-8.401c0-7.867-8.689-7.518-10.012-3.756v-3.843z"/></svg>
+                </a>
+            </div>
+            <p class="copyright">
+                &copy; 2024 Sua Marca. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = mobileMenu.querySelectorAll('a');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden'); // This class needs to be defined in CSS
+                mobileMenuButton.classList.toggle('active'); // Toggle hamburger animation
+            });
+
+            // Close mobile menu when a link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuButton.classList.remove('active');
+                    }
+                });
+            });
+
+            // Close mobile menu if clicked outside (optional, but good for UX)
+            document.addEventListener('click', (event) => {
+                // Check if the click is outside the mobile menu and the button
+                if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
